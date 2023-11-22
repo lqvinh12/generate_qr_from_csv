@@ -19,10 +19,7 @@ for singleSKU in codeList:
     partNumber = SKUArray[0]
     partSKU = SKUArray[1]
     partCondition = SKUArray[2]
-    try:
-        transaction = SKUArray[3]
-    except:
-        transaction = ""
+    transaction = SKUArray[3]
 
     qrString = f"{partNumber}|{partname}|0|0|0|Được thể hiện trên bao bì|_|_|_|{partCondition}|_|{partSKU}|sYu1bh6ReR9ycil7bmCFhi38ghezNPgpEvRHCh9ls6AWQe"
     counterString = str(counter)
