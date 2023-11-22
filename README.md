@@ -7,6 +7,7 @@
 
 - Fill content in codeList.txt
 - Run generate_qr_from_csv.py
+- Get QR image file from output/
 
 # codeList.txt structure
 
