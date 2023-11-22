@@ -6,7 +6,9 @@ import os
 # SVG config
 factory = qrcode.image.svg.SvgImage
 timestamp = str(int(datetime.now().timestamp()))
-os.mkdir(f'output2/{timestamp}/')
+if not os.path.exists('output/'):
+    os.mkdir('output/')
+os.mkdir(f'output/{timestamp}/')
 # Generate
 codeList = open('codeList.txt').readlines()
 counter = 1
@@ -33,7 +35,7 @@ for singleSKU in codeList:
 
     # myImg = qrcode.make(qrString, image_factory = factory) For Svg
     myImg = qrcode.make(qrString)
-    imgName = "output2/" + timestamp + "/"+transaction + \
+    imgName = "output/" + timestamp + "/"+transaction + \
         "_" + partNumber + "_" + partSKU + ".png"
     myImg.save(imgName)
     counter += 1
